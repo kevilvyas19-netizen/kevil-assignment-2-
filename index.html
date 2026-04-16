@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Krupa Jewels - Traditional Jewellery Collection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header id="home">
+        <div class="header-brand">
+            <h1>Sai Krupa Jewels</h1>
+            <p class="brand-tagline">Crafted with love, worn with pride</p>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">&#9776;</button>
+
+        <nav id="mainNav">
+            <a href="#home" class="active">Home</a>
+            <a href="#collections">Collections</a>
+            <a href="#catalogue">Products</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-text">
+                <h2>Traditional Jewellery for Every Celebration</h2>
+                <p>Browse our latest handpicked collection of necklaces, bangles, earrings, bridal sets, and festive pieces with ready pricing and direct WhatsApp enquiry.</p>
+                <a href="#catalogue" class="btn-primary">View 20 Featured Designs</a>
+            </div>
+        </section>
+
+        <section class="categories-section" id="collections">
+            <h2 class="section-title">Shop by Collection</h2>
+            <div class="cards-flex">
+                <div class="category-card">
+                    <img src="hy.jpeg" alt="Necklace collection" class="card-img-real">
+                    <div class="card-info">
+                        <h3>Necklaces</h3>
+                        <p>Layered harams, chokers, mangalsutras, and statement festive sets.</p>
+                        <a href="#catalogue" class="btn-small category-link" data-category="necklace">Explore</a>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <img src="b.jpeg" alt="Earring collection" class="card-img-real">
+                    <div class="card-info">
+                        <h3>Earrings</h3>
+                        <p>Studs, chandbalis, jhumkas, and floral festive drops.</p>
+                        <a href="#catalogue" class="btn-small category-link" data-category="earring">Explore</a>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <img src="k.jpeg" alt="Bangle collection" class="card-img-real">
+                    <div class="card-info">
+                        <h3>Bangles</h3>
+                        <p>Designer kada styles, slim daily bangles, and sparkle bracelets.</p>
+                        <a href="#catalogue" class="btn-small category-link" data-category="bangle">Explore</a>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <img src="WhatsApp Image 2026-04-13 at 19.15.32.jpeg" alt="Bridal jewellery collection" class="card-img-real">
+                    <div class="card-info">
+                        <h3>Bridal Sets</h3>
+                        <p>Grand wedding looks with matching earrings and rich detailing.</p>
+                        <a href="#catalogue" class="btn-small category-link" data-category="bridal">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="filter-section" id="catalogue">
+            <p>Choose a category or browse our full catalogue below.</p>
+            <div class="filter-buttons">
+                <button class="filter-btn active-filter" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="necklace">Necklaces</button>
+                <button class="filter-btn" data-filter="earring">Earrings</button>
+                <button class="filter-btn" data-filter="bangle">Bangles</button>
+                <button class="filter-btn" data-filter="bridal">Bridal</button>
+                <button class="filter-btn" data-filter="other">Other</button>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <h2 class="section-title">20 Featured Products</h2>
+            <div class="products-grid" id="productsGrid"></div>
+            <p class="no-products" id="noProducts" style="display: none;">No products found in this category.</p>
+        </section>
+
+        <section class="why-section" id="about">
+            <h2 class="section-title">Why Families Choose Sai Krupa Jewels</h2>
+            <div class="features-flex">
+                <div class="feature-item">
+                    <span class="feature-icon">&#10022;</span>
+                    <h3>Curated Designs</h3>
+                    <p>Each piece is selected for festive wear, gifting, bridal styling, and everyday elegance.</p>
+                </div>
+
+                <div class="feature-item">
+                    <span class="feature-icon">&#10022;</span>
+                    <h3>Ready to Enquire</h3>
+                    <p>Customers can see the design, category, and price first and then contact directly for ordering.</p>
+                </div>
+
+                <div class="feature-item">
+                    <span class="feature-icon">&#10022;</span>
+                    <h3>Traditional Appeal</h3>
+                    <p>Our collection blends classic Gujarati festive style with lightweight modern favourites.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="contact-flex">
+                <div class="contact-form-area">
+                    <h2>Visit Our Collection</h2>
+                    <p>See the complete range above and message us on WhatsApp for availability, customisations, and bulk festive orders.</p>
+                    <div class="info-block">
+                        <h3>Store Promise</h3>
+                        <p>Fast replies, styling guidance, and easy sharing of more designs for weddings, gifting, and celebrations.</p>
+                    </div>
+                    <a href="https://wa.me/919157756540?text=Hello%20Sai%20Krupa%20Jewels!%20I%20want%20to%20know%20more%20about%20your%20collection." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                        &#128172; Chat on WhatsApp
+                    </a>
+                </div>
+
+                <div class="contact-info-area">
+                    <h2>Contact Details</h2>
+                    <div class="info-block">
+                        <h3>WhatsApp</h3>
+                        <p>+91 91577 56540</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>Location</h3>
+                        <p>Ahmedabad, Gujarat</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>Specialities</h3>
+                        <p>Bridal sets, earrings, bangles, festive jewellery, and gift-ready pieces.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Sai Krupa Jewels</h3>
+                <p>Your trusted jewellery shop for festive, bridal, and everyday elegance.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#catalogue">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>WhatsApp: +91 91577 56540</p>
+                <p>Ahmedabad, Gujarat - 380001</p>
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2026 Sai Krupa Jewels. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

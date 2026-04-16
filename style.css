@@ -1,0 +1,1156 @@
+/* ============================================================
+   STYLES.CSS - Sai Krupa Jewels
+   One CSS file for all pages (as taught in Module 4 lecture).
+   We apply styles using element selectors, class selectors,
+   and pseudo-selectors like :hover and :active.
+   Layout is done using Flexbox (Module 5) and media queries
+   for mobile responsiveness (Module 5).
+   ============================================================ */
+
+
+/* ==============================
+   GLOBAL / RESET STYLES
+   Applied to all elements on all pages.
+   Setting margin and box-sizing to keep layout predictable
+   (as discussed when fixing body margin in Module 4).
+   ============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box makes padding stay inside the element width */
+    box-sizing: border-box;
+}
+
+/* Styling the html element sets font for the whole page
+   because CSS inheritance passes it down (taught in Module 4). */
+html {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: #fffdf5;
+    color: #3d2b1f;
+    /* A small line height makes text easier to read */
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ==============================
+   HEADER STYLES
+   ============================== */
+
+header {
+    background-color: #1e1208;
+    color: #d4a843;
+    padding: 15px 40px;
+    /* Flexbox to put the brand name and nav on the same row
+       and push them to opposite sides (space-between) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-wrap allows items to go to the next line on small screens */
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.header-brand h1 {
+    font-size: 28px;
+    color: #d4a843;
+    letter-spacing: 1px;
+}
+
+.brand-tagline {
+    font-size: 13px;
+    color: #c0a060;
+    font-style: italic;
+    margin-top: 3px;
+}
+
+/* NAV LINKS - same styling on all pages */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Styling anchor tags inside nav - as done in Module 4 website styling */
+nav a {
+    color: #d4a843;
+    text-decoration: none;
+    padding: 8px 18px;
+    border: 2px solid #d4a843;
+    border-radius: 20px;
+    font-size: 14px;
+    /* transition gives a smooth color change on hover */
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* Hover effect on nav links - pseudo-selector as learned in Module 4 */
+nav a:hover {
+    background-color: #d4a843;
+    color: #1e1208;
+}
+
+/* Active state - when the link is clicked */
+nav a:active {
+    background-color: #b8860b;
+    color: #ffffff;
+}
+
+/* The current page link gets a highlighted look */
+nav a.active {
+    background-color: #d4a843;
+    color: #1e1208;
+}
+
+/* Hamburger menu button - hidden on desktop, shown on mobile */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 2px solid #d4a843;
+    color: #d4a843;
+    font-size: 22px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+/* ==============================
+   HERO SECTION (Home page)
+   ============================== */
+
+.hero-section {
+    background-color: #2c1a0e;
+    color: #fffdf5;
+    /* padding: top/bottom left/right - box model as taught in Module 4 */
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.hero-text h2 {
+    font-size: 38px;
+    color: #d4a843;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #e8d5b0;
+    max-width: 600px;
+    /* auto left/right margin centers the paragraph */
+    margin: 0 auto 30px auto;
+}
+
+
+/* ==============================
+   BUTTONS
+   Primary CTA button, small button, WhatsApp button
+   ============================== */
+
+.btn-primary {
+    display: inline-block;
+    background-color: #b8860b;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hover effect - pseudo-selector on the button as taught in Module 4 */
+.btn-primary:hover {
+    background-color: #9a7010;
+    color: #ffffff;
+}
+
+.btn-primary:active {
+    background-color: #7a5a0a;
+}
+
+.btn-small {
+    display: inline-block;
+    background-color: #b8860b;
+    color: #ffffff;
+    padding: 7px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.btn-small:hover {
+    background-color: #9a7010;
+}
+
+/* WhatsApp button - green because that is WhatsApp's brand color */
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #25d366;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1aaa52;
+    color: #ffffff;
+}
+
+.btn-whatsapp:active {
+    background-color: #148f44;
+}
+
+
+/* ==============================
+   CATEGORIES SECTION (Home page)
+   ============================== */
+
+.categories-section {
+    padding: 60px 40px;
+    background-color: #faf3e0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 28px;
+    color: #2c1a0e;
+    margin-bottom: 35px;
+    /* A decorative line below the heading */
+    border-bottom: 2px solid #d4a843;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+/* Flex container for category cards and product cards
+   Using flexbox as taught in Module 5 */
+.cards-flex {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Individual category card */
+.category-card {
+    background-color: #ffffff;
+    border: 1px solid #e8c97a;
+    border-radius: 8px;
+    width: 220px;
+    overflow: hidden;
+    /* box-shadow gives depth - adding subtle shadow */
+    box-shadow: 0 2px 8px rgba(180, 140, 30, 0.15);
+}
+
+.category-card:hover {
+    box-shadow: 0 4px 14px rgba(180, 140, 30, 0.3);
+}
+
+/* Placeholder colored boxes where actual product images would go */
+.card-img {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Different background colors for each category placeholder */
+.necklace-img  { background-color: #8B6914; }
+.earring-img   { background-color: #6B4C9A; }
+.bangle-img    { background-color: #9A4C2E; }
+.bridal-img    { background-color: #C0536A; }
+
+.card-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.card-info h3 {
+    font-size: 17px;
+    color: #2c1a0e;
+    margin-bottom: 6px;
+}
+
+.card-info p {
+    font-size: 13px;
+    color: #7a6050;
+    line-height: 1.5;
+}
+
+
+/* ==============================
+   WHY CHOOSE US SECTION (Home page)
+   ============================== */
+
+.why-section {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: #fffdf5;
+}
+
+/* Flexbox for the three feature items side by side */
+.features-flex {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.feature-item {
+    background-color: #faf3e0;
+    border: 1px solid #e8c97a;
+    border-radius: 8px;
+    padding: 25px 20px;
+    width: 280px;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 28px;
+    color: #b8860b;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.feature-item h3 {
+    font-size: 18px;
+    color: #2c1a0e;
+    margin-bottom: 8px;
+}
+
+.feature-item p {
+    font-size: 14px;
+    color: #5c4030;
+    line-height: 1.6;
+}
+
+
+/* ==============================
+   WHATSAPP CTA SECTION
+   Used on multiple pages
+   ============================== */
+
+.whatsapp-section {
+    background-color: #2c1a0e;
+    color: #e8d5b0;
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.whatsapp-section h2 {
+    font-size: 26px;
+    color: #d4a843;
+    margin-bottom: 12px;
+}
+
+.whatsapp-section p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ==============================
+   PAGE BANNER
+   Used on products, about, contact pages.
+   A simple heading area at the top.
+   ============================== */
+
+.page-banner {
+    background-color: #2c1a0e;
+    color: #e8d5b0;
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.page-banner h2 {
+    font-size: 34px;
+    color: #d4a843;
+    margin-bottom: 10px;
+}
+
+.page-banner p {
+    font-size: 16px;
+    color: #c0a060;
+}
+
+
+/* ==============================
+   PRODUCTS PAGE STYLES
+   ============================== */
+
+/* Filter button area */
+.filter-section {
+    padding: 30px 40px 10px;
+    text-align: center;
+    background-color: #faf3e0;
+}
+
+.filter-section p {
+    font-size: 15px;
+    color: #5c4030;
+    margin-bottom: 12px;
+}
+
+/* Filter buttons row */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Individual filter button - styled like nav links from Module 4 */
+.filter-btn {
+    background-color: #ffffff;
+    color: #8b6914;
+    border: 2px solid #d4a843;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: Georgia, serif;
+}
+
+.filter-btn:hover {
+    background-color: #d4a843;
+    color: #1e1208;
+}
+
+.filter-btn:active {
+    background-color: #b8860b;
+    color: #ffffff;
+}
+
+/* When a filter is selected, this class is added by JS */
+.active-filter {
+    background-color: #d4a843;
+    color: #1e1208;
+}
+
+/* Products grid section using CSS Grid - as taught in Module 5 */
+.products-section {
+    padding: 40px;
+    background-color: #fffdf5;
+    min-height: 300px;
+}
+
+/* Grid layout for product cards
+   repeat(auto-fill, minmax(220px, 1fr)) creates a responsive grid
+   where each card is at least 220px wide */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* Product card style - similar to category cards but for the products page */
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid #e8c97a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(180, 140, 30, 0.12);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 16px rgba(180, 140, 30, 0.28);
+}
+
+/* Real product image in product card.
+   object-fit: cover makes the image fill the box neatly without stretching.
+   This was covered when discussing the img tag in Module 3. */
+.product-card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #e8c97a;
+}
+
+/* Product info text area */
+.product-card-info {
+    padding: 15px;
+}
+
+.product-card-info h3 {
+    font-size: 16px;
+    color: #2c1a0e;
+    margin-bottom: 5px;
+}
+
+.product-card-info .product-material {
+    font-size: 12px;
+    color: #9a7a50;
+    margin-bottom: 6px;
+    font-style: italic;
+}
+
+.product-card-info .product-category-tag {
+    display: inline-block;
+    background-color: #faf3e0;
+    color: #8b6914;
+    border: 1px solid #d4a843;
+    border-radius: 10px;
+    padding: 2px 10px;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 20px;
+    color: #8b6914;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.product-card-info .btn-small {
+    margin-top: auto;
+}
+
+.no-products {
+    text-align: center;
+    color: #9a7a50;
+    font-size: 16px;
+    padding: 40px;
+}
+
+
+/* ==============================
+   PRODUCT DETAIL PAGE (product.html)
+   ============================== */
+
+/* Back link at the top of product page */
+.back-link {
+    padding: 15px 40px;
+    background-color: #faf3e0;
+}
+
+.back-link a {
+    color: #8b6914;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.back-link a:hover {
+    color: #2c1a0e;
+    text-decoration: underline;
+}
+
+/* Main product detail section */
+.product-detail-section {
+    padding: 40px;
+    background-color: #fffdf5;
+}
+
+/* Flex layout for product detail: image on left, info on right */
+.product-detail-flex {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Real product image on detail page */
+.product-detail-image {
+    width: 380px;
+    max-width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #e8c97a;
+    flex-shrink: 0;
+}
+
+/* Real image inside the suggested / category cards */
+.card-img-real {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #e8c97a;
+}
+
+/* Product code tag shown below the product name */
+.product-code {
+    font-size: 12px;
+    color: #b8860b;
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-style: normal;
+}
+
+.product-detail-info {
+    flex: 1;
+    min-width: 280px;
+}
+
+.product-detail-info h2 {
+    font-size: 28px;
+    color: #2c1a0e;
+    margin-bottom: 8px;
+}
+
+.product-detail-info .detail-material {
+    color: #9a7a50;
+    font-style: italic;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.product-detail-info .detail-description {
+    font-size: 15px;
+    color: #5c4030;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.product-detail-info .detail-category {
+    display: inline-block;
+    background-color: #faf3e0;
+    color: #8b6914;
+    border: 1px solid #d4a843;
+    border-radius: 12px;
+    padding: 4px 14px;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+/* Suggested products section below the main product */
+.suggested-section {
+    padding: 40px;
+    background-color: #faf3e0;
+    text-align: center;
+}
+
+/* Loading text while JS fetches product */
+#loadingMsg {
+    text-align: center;
+    color: #9a7a50;
+    padding: 40px;
+    font-size: 16px;
+}
+
+
+/* ==============================
+   ABOUT PAGE STYLES
+   ============================== */
+
+.about-section {
+    padding: 60px 40px;
+    background-color: #fffdf5;
+}
+
+/* Flex layout: text on left, image on right */
+.about-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 280px;
+}
+
+.about-text h2 {
+    font-size: 26px;
+    color: #2c1a0e;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #d4a843;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.about-text p {
+    font-size: 15px;
+    color: #5c4030;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Shop image placeholder */
+.about-image-placeholder {
+    width: 300px;
+    height: 300px;
+    background-color: #8b6914;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.about-image-placeholder span {
+    font-size: 28px;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* Values section - same as why section */
+.values-section {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: #faf3e0;
+}
+
+/* Team section */
+.team-section {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: #fffdf5;
+}
+
+.team-card {
+    background-color: #ffffff;
+    border: 1px solid #e8c97a;
+    border-radius: 8px;
+    padding: 25px 20px;
+    width: 240px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(180, 140, 30, 0.1);
+}
+
+/* Circular photo placeholder for team members */
+.team-photo-placeholder {
+    width: 90px;
+    height: 90px;
+    background-color: #c9a84c;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+}
+
+.team-card h3 {
+    font-size: 17px;
+    color: #2c1a0e;
+    margin-bottom: 5px;
+}
+
+.team-role {
+    color: #8b6914;
+    font-size: 13px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.team-card p:last-child {
+    font-size: 13px;
+    color: #7a6050;
+    line-height: 1.5;
+}
+
+
+/* ==============================
+   CONTACT PAGE STYLES
+   ============================== */
+
+.contact-section {
+    padding: 50px 40px;
+    background-color: #fffdf5;
+}
+
+/* Two column layout using flexbox */
+.contact-flex {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-form-area {
+    flex: 1;
+    min-width: 280px;
+}
+
+.contact-form-area h2 {
+    font-size: 22px;
+    color: #2c1a0e;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #d4a843;
+    padding-bottom: 6px;
+    display: inline-block;
+}
+
+.contact-form-area p {
+    font-size: 14px;
+    color: #5c4030;
+    margin-bottom: 20px;
+}
+
+/* Form group: label + input together with spacing */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #2c1a0e;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Styling form inputs, textarea, select - as shown in Module 4 styling */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #d4a843;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: Georgia, serif;
+    color: #3d2b1f;
+    background-color: #fffdf5;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #b8860b;
+    background-color: #fff;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Error and success messages for the form - shown/hidden by JS */
+.form-error {
+    color: #cc3300;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.form-success {
+    color: #1a7a40;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* Right side contact info */
+.contact-info-area {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.contact-info-area h2 {
+    font-size: 22px;
+    color: #2c1a0e;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #d4a843;
+    padding-bottom: 6px;
+    display: inline-block;
+}
+
+/* Each contact detail block */
+.info-block {
+    background-color: #faf3e0;
+    border-left: 3px solid #d4a843;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 0 6px 6px 0;
+}
+
+.info-block h3 {
+    font-size: 15px;
+    color: #8b6914;
+    margin-bottom: 6px;
+}
+
+.info-block p {
+    font-size: 14px;
+    color: #5c4030;
+    line-height: 1.6;
+}
+
+/* WhatsApp quick contact box */
+.whatsapp-quick {
+    background-color: #1e1208;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.whatsapp-quick h3 {
+    color: #d4a843;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+
+/* ==============================
+   FOOTER STYLES
+   ============================== */
+
+footer {
+    background-color: #1e1208;
+    color: #c0a060;
+    padding: 40px;
+}
+
+/* Three column footer using flexbox */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+    /* max-width centers the footer content on large screens */
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-col h3 {
+    color: #d4a843;
+    font-size: 16px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #3d2b1f;
+}
+
+.footer-col p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #a08858;
+}
+
+/* Footer nav list - removing bullet points from the list */
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 6px;
+}
+
+.footer-col ul li a {
+    color: #a08858;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-col ul li a:hover {
+    color: #d4a843;
+}
+
+/* Bottom copyright line */
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    color: #7a6050;
+    border-top: 1px solid #3d2b1f;
+    padding-top: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* ==============================
+   MEDIA QUERIES FOR MOBILE
+   As taught in Module 5 - Media Queries lecture.
+   We use max-width: 768px as our mobile breakpoint.
+   Below 768px = phone sized screens.
+   ============================== */
+
+@media (max-width: 768px) {
+
+    /* Header - stack brand and nav vertically on mobile */
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-brand h1 {
+        font-size: 22px;
+    }
+
+    /* Show the hamburger button on mobile */
+    .menu-toggle {
+        display: block;
+        /* Position it so it appears on the right side of header */
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    /* Header needs relative position for the absolute button above */
+    header {
+        position: relative;
+    }
+
+    /* Nav links hidden by default on mobile.
+       JS adds the class "nav-open" to show them when hamburger is clicked. */
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+        padding-top: 10px;
+    }
+
+    /* When JS adds this class, show the nav */
+    nav.nav-open {
+        display: flex;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hero section - smaller padding and text on mobile */
+    .hero-section {
+        padding: 50px 20px;
+    }
+
+    .hero-text h2 {
+        font-size: 26px;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+    }
+
+    /* Sections - less padding on mobile (box model) */
+    .categories-section,
+    .why-section,
+    .about-section,
+    .values-section,
+    .team-section,
+    .products-section,
+    .suggested-section,
+    .contact-section {
+        padding: 40px 20px;
+    }
+
+    /* Cards - full width on mobile so each card takes its own row */
+    .category-card,
+    .team-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* About flex: stack vertically on mobile */
+    .about-flex {
+        flex-direction: column;
+    }
+
+    .about-image-placeholder {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Product detail: stack image and info vertically */
+    .product-detail-flex {
+        flex-direction: column;
+    }
+
+    .product-detail-image {
+        width: 100%;
+        max-width: 350px;
+        height: 280px;
+    }
+
+    /* Contact: stack form and info vertically */
+    .contact-flex {
+        flex-direction: column;
+    }
+
+    .contact-info-area {
+        width: 100%;
+    }
+
+    /* Footer: stack columns vertically */
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Page banner padding */
+    .page-banner {
+        padding: 35px 20px;
+    }
+
+    .page-banner h2 {
+        font-size: 24px;
+    }
+
+    /* Back link area */
+    .back-link {
+        padding: 12px 20px;
+    }
+
+    /* WhatsApp section */
+    .whatsapp-section {
+        padding: 40px 20px;
+    }
+
+    /* Filter section */
+    .filter-section {
+        padding: 20px;
+    }
+
+    .filter-buttons {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        font-size: 13px;
+        padding: 7px 15px;
+    }
+
+}
+
+/* A slightly wider breakpoint for tablets - around 600px to 768px
+   On tablets, show 2 columns for products grid instead of 1 or 4. */
+@media (max-width: 600px) {
+
+    .products-grid {
+        /* On very small screens, just one column */
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text h2 {
+        font-size: 22px;
+    }
+
+    footer {
+        padding: 30px 20px;
+    }
+
+}
